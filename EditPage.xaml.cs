@@ -5,7 +5,7 @@ namespace Repro;
 public partial class EditPage : ContentPage
 {
     // false = sproži napako; true = varna različica (premik po koncu layouta)
-    const bool UseWorkaround = true;
+    const bool UseWorkaround = false;
 
     public ObservableCollection<TimetableItem> Items { get; }
 
