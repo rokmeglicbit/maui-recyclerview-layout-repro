@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Repro.EditPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Repro"
+             Title="Edit">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+            <Label Text="Spremeni uro - seznam se razvrsti po času" />
+
+            <!-- CanReorderItems => ReorderableItemsView (kot v stack traceu) -->
+            <CollectionView x:Name="IntervalsView"
+                            CanReorderItems="True"
+                            ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:TimetableItem">
+                        <Grid ColumnDefinitions="*,Auto" Padding="8">
+                            <Label Text="{Binding Name}" VerticalOptions="Center" />
+                            <TimePicker Grid.Column="1"
+                                        Time="{Binding Start, Mode=TwoWay}"
+                                        TimeSelected="TimePicker_TimeSelected" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

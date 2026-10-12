@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Repro.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Timetables">
+    <VerticalStackLayout Padding="24" Spacing="16">
+        <Label Text="Repro: #39084 (Android)" FontSize="20" />
+        <Button Text="Edit (1x)" Clicked="OnEditClicked" />
+        <Button Text="Edit 3x fast (Edit -> back -> Edit ...)" Clicked="OnEditFastClicked" />
+    </VerticalStackLayout>
+</ContentPage>
